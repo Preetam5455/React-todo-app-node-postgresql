@@ -11,12 +11,12 @@ function TodoItem({ todo }) {
         let currentDate = date.toLocaleDateString();
         let currentTime = date.toLocaleTimeString();
 
-        updateTodo(todo.id,{...todo,date:currentDate,time:currentTime,edited:true,todo:todoMsg});
+        updateTodo(todo._id,{...todo,date:currentDate,time:currentTime,edited:true,todo:todoMsg});
         setIsTodoEditable(false)
     }
 
     const toggleCompleted = () =>{
-        toggleComplete(todo.id,{...todo,complete:!todo.complete})
+        toggleComplete(todo._id,{...todo,complete:!todo.complete})
     }
 
     console.log(todo.complete);
@@ -65,7 +65,7 @@ function TodoItem({ todo }) {
             {/* Delete Todo Button */}
             <button
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"
-                onClick={() => deleteTodo(todo.id)}
+                onClick={() => deleteTodo(todo._id)}
             >
                 ❌
             </button>

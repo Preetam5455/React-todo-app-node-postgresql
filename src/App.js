@@ -54,7 +54,7 @@ function App() {
 
     try{
       const response = await fetch(`http://localhost:5500/api/list/${id}`,{
-        method:'PUT',
+        method:'PATCH',
         headers:{
           'Content-Type' : 'application/json',
         },
@@ -103,7 +103,7 @@ function App() {
         <div className="flex flex-wrap gap-y-3">
           {/*Loop and Add TodoItem here */}
           {todos.map((todo)=>(
-            <div key={todo.id} className='w-full'>
+            <div key={todo._id} className='w-full'>
             <TodoItem todo={todo}/>
             </div>
           ))}
